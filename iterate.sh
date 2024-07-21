@@ -7,8 +7,8 @@ if [ $# -ne 12 ]; then
 fi
 
 NAME=$1
-MODEL_FILE=$(realpath $2)
-RAY_FILE=$(realpath $3)
+MODEL_FILE=$(realpath "$2")
+RAY_FILE=$(realpath "$3")
 SETS=$4
 WAYS=$5
 CLSIZE=$6
