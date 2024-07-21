@@ -2,16 +2,16 @@
 set -x
 
 if [ $# -ne 12 ]; then
-  echo "usage: $0 MODEL_FILE RAY_FILE SETS WAYS CLSIZE NAME T_TRV_INT_START T_TRV_INT_INCR T_TRV_INT_END T_SWITCH_START T_SWITCH_INCR T_SWITCH_END"
+  echo "usage: $0 NAME MODEL_FILE RAY_FILE SETS WAYS CLSIZE T_TRV_INT_START T_TRV_INT_INCR T_TRV_INT_END T_SWITCH_START T_SWITCH_INCR T_SWITCH_END"
   exit
 fi
 
-MODEL_FILE=$1
-RAY_FILE=$2
-SETS=$3
-WAYS=$4
-CLSIZE=$5
-NAME=$6
+NAME=$1
+MODEL_FILE=$(realpath $2)
+RAY_FILE=$(realpath $3)
+SETS=$4
+WAYS=$5
+CLSIZE=$6
 T_TRV_INT_START=$7
 T_TRV_INT_INCR=$8
 T_TRV_INT_END=$9
@@ -48,3 +48,5 @@ for i in $(seq "${T_TRV_INT_START}" "${T_TRV_INT_INCR}" "${T_TRV_INT_END}"); do
     echo "${i} ${j} ${HIT} ${MISS} ${CLSTR} ${UPDT} ${BBOX} ${IST}" >> "${NAME}.txt"
   done
 done
+
+rm -rf "work-${NAME}"
