@@ -29,7 +29,7 @@ for i in $(seq "${T_TRV_INT_START}" "${T_TRV_INT_INCR}" "${T_TRV_INT_END}"); do
 
     mkdir data
     cd data || exit
-    ../../bin/generate "../../scene/${MODEL_FILE}" "../../scene/${RAY_FILE}" "${i}" "${j}" 1.0
+    ../../bin/generate "${MODEL_FILE}" "${RAY_FILE}" "${i}" "${j}" 1.0
     cd ..
 
     mkdir work
