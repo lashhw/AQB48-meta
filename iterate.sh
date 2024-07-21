@@ -3,7 +3,7 @@ set -x
 
 if [ $# -ne 12 ]; then
   echo "usage: $0 NAME MODEL_FILE RAY_FILE SETS WAYS CLSIZE T_TRV_INT_START T_TRV_INT_INCR T_TRV_INT_END T_SWITCH_START T_SWITCH_INCR T_SWITCH_END"
-  exit
+  exit 1
 fi
 
 NAME=$1
