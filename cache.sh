@@ -8,7 +8,6 @@ for i in bathroom bmw classroom house kitchen staircase teapot; do
 
     cd ../work
     make clean
-
     make c_sim
     ../../AQB48-baseline/util/cache_stats_unified trace.txt 128 4 2048 8 64 16 > "${i}.cache"
     mv "${i}.cache" ../../
