@@ -4,7 +4,7 @@ set -e
 for i in bathroom bmw classroom house kitchen staircase teapot; do
     cd AQB48-baseline-catapult/data
     rm -rf -- *.bin
-    ../../AQB48-baseline/data/rtcore/generate "../../scene/${i}.ply" "../../scene-small/${i}_100000.ray"
+    generate "../../scene/${i}.ply" "../../scene-small/${i}_100000.ray"
 
     cd ../work
     make clean
